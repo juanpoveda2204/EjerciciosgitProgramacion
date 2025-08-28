@@ -15,5 +15,7 @@ public class Main {
         System.out.println("8. git switch -c - CREAR Y POSICIONARME SOBRE LA RAMA");
 
 
+        System.out.println("Juan Sebastian Poveda Lopez, Zipaquira, Gato Felix");
+
     }
 }
