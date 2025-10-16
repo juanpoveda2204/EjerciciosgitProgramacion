@@ -1,31 +1,42 @@
 public class LIBROIMPRESO extends LIBRO {
 
-    private Double Peso;
+    private String peso;
 
-
-    public LIBROIMPRESO() {
+    public LIBROIMPRESO(String t, String a, double p, int e, double peso) {
     }
 
-    public LIBROIMPRESO(String titulo, String autor, String precio, int cantidaddeejemplares, Double peso) {
-        super(titulo, autor, precio, cantidaddeejemplares);
-        Peso = peso;
+    public LIBROIMPRESO(String titulo, String autor, String precio, Integer cantidaddeejemplares, String codigo, String peso) {
+        super(titulo, autor, precio, cantidaddeejemplares, codigo);
+        this.peso = peso;
+    }
+
+    public String getPeso() {
+        return peso;
+    }
+
+    public void setPeso(String peso) {
+        this.peso = peso;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "LIBROIMPRESO{" +
-                "Peso=" + Peso +
+        return "LIBROIMPRESO{" +
+                "Peso=" + peso +
+                ", titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", precio='" + precio + '\'' +
+                ", cantidaddeejemplares=" + cantidaddeejemplares +
+                ", codigo='" + codigo + '\'' +
                 '}';
     }
 
     public String mostrarlibro() {
-        return "titulo: " + titulo + "Autor: " + Autor + "Precio: " + Precio + "Cabtidaddeejemplares: " + Cantidaddeejemplares;
+        return
+                "LIBRO IMPRESO: " + "titulo: " + titulo + "Autor: " + autor + "Precio: " + precio + "Cabtidaddeejemplares: " + cantidaddeejemplares + "Peso: " + peso;
     }
 
-    public String prestar() {
-        return "Tamaño: " + Tamaño + "Disponibilidad: " + Disponibilidad;
 
 
         }
 
-}
+

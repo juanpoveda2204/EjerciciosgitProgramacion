@@ -1,36 +1,56 @@
 public class LIBRODIGITAL extends LIBRO {
 
-    private Double Tamaño;
-    private String Disponibilidad;
+    private Double tamaño;
+    private String disponibilidad;
 
-
-    public LIBRODIGITAL() {
+    public LIBRODIGITAL(String t, String a, double p, int e, double tam) {
     }
 
-    public LIBRODIGITAL(String titulo, String autor, String precio, Integer cantidaddeejemplares, Double tamaño, String disponibilidad) {
-        super(titulo, autor, precio, cantidaddeejemplares);
-        Tamaño = tamaño;
-        Disponibilidad = disponibilidad;
+    public LIBRODIGITAL(String titulo, String autor, String precio, Integer cantidaddeejemplares, String codigo, Double tamaño, String disponibilidad) {
+        super(titulo, autor, precio, cantidaddeejemplares, codigo);
+        this.tamaño = tamaño;
+        this.disponibilidad = disponibilidad;
     }
 
+    public Double getTamaño() {
+        return tamaño;
+    }
+
+    public void setTamaño(Double tamaño) {
+        this.tamaño = tamaño;
+    }
+
+    public String getDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public void setDisponibilidad(String disponibilidad) {
+        this.disponibilidad = disponibilidad;
+    }
 
     @Override
     public String toString() {
-        return super.toString() + "LIBRODIGITAL{" +
-                "Disponibilidad='" + Disponibilidad + '\'' +
-                ", Tamaño=" + Tamaño +
+        return "LIBRODIGITAL{" +
+                "tamaño=" + tamaño +
+                ", disponibilidad='" + disponibilidad + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", precio='" + precio + '\'' +
+                ", cantidaddeejemplares=" + cantidaddeejemplares +
+                ", codigo='" + codigo + '\'' +
                 '}';
     }
 
-    Override
+    @Override
 
     public String mostrarlibro() {
-        return "titulo: " + titulo + "Autor: " + Autor + "Precio: " + Precio + "Cabtidaddeejemplares: " + cantidaddeejemplares + "Tamaño: " + Tamaño + "Disponibilidad: " + Disponibilidad;
+        return
+                "LIBRO DIGITAL: " + "titulo: " + titulo + "Autor: " + autor + "Precio: " + precio + "Cabtidaddeejemplares: " + cantidaddeejemplares + "Tamaño: " + tamaño + "Disponibilidad: " + disponibilidad;
     }
 
 
     public int prestar(int cant) {
-        if (Disponibilidad.equals("si")) {
+        if (disponibilidad.equals("si")) {
             return cantidaddeejemplares -= cant;
         }
         return 0;
@@ -38,7 +58,7 @@ public class LIBRODIGITAL extends LIBRO {
     }
 
     public int devolver(int cant) {
-        if (Disponibilidad.equals("si")) {
+        if (disponibilidad.equals("si")) {
             return cantidaddeejemplares += cant;
         }
 

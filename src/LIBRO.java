@@ -1,19 +1,20 @@
 public class LIBRO {
 
     protected String titulo;
-    protected String Autor;
-    protected String Precio;
+    protected String autor;
+    protected String precio;
     protected Integer cantidaddeejemplares;
-
+    protected String codigo;
 
     public LIBRO() {
     }
 
-    public LIBRO(String titulo, String autor, String precio, Integer cantidaddeejemplares) {
+    public LIBRO(String titulo, String autor, String precio, Integer cantidaddeejemplares, String codigo) {
         this.titulo = titulo;
-        Autor = autor;
-        Precio = precio;
-        cantidaddeejemplares = cantidaddeejemplares;
+        this.autor = autor;
+        this.precio = precio;
+        this.cantidaddeejemplares = cantidaddeejemplares;
+        this.codigo = codigo;
     }
 
     public String getTitulo() {
@@ -25,19 +26,19 @@ public class LIBRO {
     }
 
     public String getAutor() {
-        return Autor;
+        return autor;
     }
 
     public void setAutor(String autor) {
-        Autor = autor;
+        this.autor = autor;
     }
 
     public String getPrecio() {
-        return Precio;
+        return precio;
     }
 
     public void setPrecio(String precio) {
-        Precio = precio;
+        this.precio = precio;
     }
 
     public Integer getCantidaddeejemplares() {
@@ -45,24 +46,34 @@ public class LIBRO {
     }
 
     public void setCantidaddeejemplares(Integer cantidaddeejemplares) {
-        cantidaddeejemplares = cantidaddeejemplares;
+        this.cantidaddeejemplares = cantidaddeejemplares;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
 
     @Override
     public String toString() {
         return "LIBRO{" +
                 "titulo='" + titulo + '\'' +
-                ", Autor='" + Autor + '\'' +
-                ", Precio='" + Precio + '\'' +
-                ", Cantidaddeejemplares='" + cantidaddeejemplares + '\'' +
+                ", autor='" + autor + '\'' +
+                ", precio='" + precio + '\'' +
+                ", cantidaddeejemplares=" + cantidaddeejemplares +
+                ", codigo='" + codigo + '\'' +
                 '}';
     }
 
     public String mostrarlibro(){
-        return "titulo: " + titulo + "Autor: " + Autor + "Precio: " + Precio + "Cabtidaddeejemplares: " + cantidaddeejemplares;
+        return "Codigo" + codigo + "titulo: " + titulo + "Autor: " + autor + "Precio: " + precio + "Cabtidaddeejemplares: " + cantidaddeejemplares;
     }
 
 
+    public void mostrarLibro() {
+    }
 }
 
